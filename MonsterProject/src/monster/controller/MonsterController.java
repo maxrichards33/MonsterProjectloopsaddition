@@ -1,23 +1,32 @@
 package monster.controller;
 
+import java.util.Scanner;
+
 import monster.model.MarshmallowMonster;
 
 
 public class MonsterController 
 {
+	private MonsterDisplay popup; 
+	
+	public MonsterController()
+	{
+		popup = new MonsterDisplay();
+	}
+	
 	public void start()
 	{
 		MarshmallowMonster sample = new MarshmallowMonster();
 		System.out.println(sample);
 		MarshmallowMonster realMonster = new MarshmallowMonster("null", 8, 1, 4, true);
-		
-		
-		System.out.println("max is hungry so he is going to eat his legs");
-		realMonster.setTenticleAmount(3.5);
 		System.out.println(realMonster);
+		System.out.println("null is very hungry. He is going to eat his own tenticle);
+		realMonster.setTentacleAmount(5)
+		System.out.println(realMonter);
+		//popup.displayText(realMonster.toString());
+		//System.out.println(sample);
 		
 		interactWithTheMonster(realMonster);
-		
 	}
 	
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
@@ -27,9 +36,29 @@ public class MonsterController
 		System.out.println("How many do you want to eat?");
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = myScanner.nextInt();
-		currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
-		System.out.println("Ok, now " + currentMonster.getName() + "has" +currentMonster.getArmCount() + "arms left.");
-		System.out.println("Ok, now " + currentMonster.getName() + "has" + currentMonster.getArmCount() + "arms left." );
-		
-	}
-}
+		if(consumed < 0)
+		//currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
+		//System.out.println("Ok, now " + currentMonster.getName() + "has" +currentMonster.getArmCount() + "arms left.");
+		//System.out.println("Ok, now " + currentMonster.getName() + "has" + currentMonster.getArmCount() + "arms left." );
+		{
+			System.out.println("You cannot eat a negative amount silly human);
+		}
+		else if (consumed == 0)
+		{
+			System.out.println("Not that hungry are you?");
+		}
+		else if(consumed > currentMonster.getArmCount())
+		{
+			System.out.println("That is impossble - I only have " + currentMonster.getArmCount() + " arms!!!");
+		}
+		else
+		{
+			currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
+			System.out.println("Thank you so muuch! I only have this many arms now: = currentMonster.getArmCount());
+			System.out.println("How many do you want to eat?");		
+			Scanner mycanner = new Scanner(System.in);
+			int consumed = myScanner.nextInt();
+			if(consumed < 0)
+			{
+				System.out.println("you cannot eat a negative amount silly human");
+			}
