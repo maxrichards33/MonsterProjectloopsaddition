@@ -14,7 +14,6 @@ public class MonsterController
 		popup = new MonsterDisplay();
 	}
 	
-	
 	public void start()
 	{
 		MarshmallowMonster sample = new MarshmallowMonster();
@@ -42,7 +41,7 @@ public class MonsterController
 		//System.out.println("Ok, now " + currentMonster.getName() + "has" +currentMonster.getArmCount() + "arms left.");
 		//System.out.println("Ok, now " + currentMonster.getName() + "has" + currentMonster.getArmCount() + "arms left." );
 		{
-			System.out.println("You cannot eat a negative amount silly human");
+			System.out.println("You cannot eat a negative amount silly human);
 		}
 		else if (consumed == 0)
 		{
@@ -55,12 +54,11 @@ public class MonsterController
 		else
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
-			System.out.println("Thank you so muuch! I only have this many arms now: = currentMonster.getArmCount()");
+			System.out.println("Thank you so muuch! I only have this many arms now: = currentMonster.getArmCount());
 			System.out.println("How many do you want to eat?");		
-			consumed = myScanner.nextInt();
-			if(eyeCount == 5)
+			Scanner mycanner = new Scanner(System.in);
+			int consumed = myScanner.nextInt();
+			if(consumed < 0)
 			{
-				popup.displayTect(currentMonster.getName() + "Ah! I cant see!! What have you done silly human?");
-				//System
+				System.out.println("you cannot eat a negative amount silly human");
 			}
-			
