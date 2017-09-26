@@ -10,11 +10,10 @@ public class MonsterDisplay
 		JOptionPane.showMessageDialog(null, textToDisplay);
 	}
 	
-	public String getResponse(String qestionAsked)
+	public void getResponse(String qestionAsked)
 	{
-		String response = "";
 		
-		resonse 
+		String Reponse = ("i am so good");
 	}
 	
 
