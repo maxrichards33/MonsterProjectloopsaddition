@@ -119,19 +119,4 @@ public class MonsterController
 			
 		}
 	}
-	
-	private boolean isValidInteger(String input)
-	{
-		boolean valid = false;
-		try 
-		{
-			Integer.parseInt(input);
-			valid = true;
-		}
-		catch (NumberFormatException error)
-		{
-			popup.displayText("type in a number silly");
-		}
-		return valid;
-	}
 }
